@@ -1,3 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+  *{
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  /* body{
+    visibility: hidden;
+  } */
+}
+
+@layer components {
+  .banner{
+    /* height: 50vh;
+    height: calc(var(--vh, 1vh) * 50); */
+    background: white;
+  }
+
+  .line{
+    @apply relative overflow-hidden h-16 mb-2;
+  }
+
+  svg{
+    border: 2px solid black;
+    border-radius: 100%;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    transition: .4s ease-in-out;
+    /* @apply w-6 h-6; */
+  }
+
+  svg:hover{
+    background-color: black;
+    color: white;
+  }
+
+  .banner-heading{
+    color: white;
+    mix-blend-mode: difference;
+  }
+
+  .card{
+    height: 45vh;
+    height: calc(var(--vh, 1vh) * 45);
+  }
+
+  .overlay-top{
+    height: 100%;
+    position: absolute;
+    @apply bg-black bottom-0 left-0 right-0 w-[100%] md:w-[33.333vw];
+  }
+
+  .overlay-top:nth-child(2) {
+    @apply left-[33.333%]  hidden md:block;
+  }
+
+  .overlay-top:nth-child(3) {
+    @apply left-[66.666%] hidden md:block;
+  } 
+
+  .overlay-bottom{
+    height: 100%;
+    position: absolute;
+    @apply bg-black bottom-0 right-0 md:right-[66.666%] w-[100%] md:w-[33.333vw] ;
+  }
+
+  .overlay-bottom:nth-child(2) {
+    @apply md:right-[33.333%] right-0 md:block;
+  }
+
+  .overlay-bottom:nth-child(3) {
+    @apply right-0 hidden md:block;
+  } 
+
+  /* 
+  9:59
+  @media screen {
+    .overlay-bottom:nth-child(2) {
+      @apply w-[100vw] top-[100%];
+    }
+
+    .overlay-bottom:nth-child(3) {
+      @apply w-[100vw] top-[200%];
+    }
+  } */
+}
